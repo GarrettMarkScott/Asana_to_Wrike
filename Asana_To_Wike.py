@@ -3,6 +3,9 @@ import random
 import datetime
 
 asana_csv = input('What is the exact .csv file name? \n')
+first_name = input('What is your first name?\n')
+last_name = input('What is your last name?\n')
+email_address = input('What is your email?\n')
 today = datetime.datetime.today()
 tomorrow = today + datetime.timedelta(1)
 df = pd.read_csv(asana_csv)
@@ -25,7 +28,7 @@ df['Status']='Active'
 df['Priority'] = 'Normal'
 df['Start Date'] = str(datetime.datetime.strftime(today,'%m/%d/%Y'))
 df['End Date'] = str(datetime.datetime.strftime(tomorrow,'%m/%d/%Y'))
-df['Assigned To'] = "Garrett Scott<garrettscott@mydealerworld.com>"
+df['Assigned To'] = first_name+" "+last_name+"<"+email_address">"
 df['Duration'] = '1 Day'
 df['Depends On'] = ''
 df['Start Date Constraint'] = ''
